@@ -1,0 +1,143 @@
+:root {
+    --container-padding: 15px;
+    --main-margin: 32px;
+    --bg-color: #fff;
+    --primary-grey: #909090;
+    --primary-black: #000000;
+    --secondary-charcoal: #2E2E2E;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: var(--container-width, 1120px);
+    width: 100%;
+    padding: 0px var(--container-padding);
+    margin-inline: auto;
+}
+
+.container-fluid {
+    --container-width: 1440px;
+}
+
+/* HEADER */
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--main-margin);
+    background-color: var(--bg-color);
+    height: 88px;
+}
+
+.header-top-form {
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    button[type="submit"] {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 11px;
+        left: 0;
+        color: #989898;
+    }
+}
+
+.header-top-form input {
+    background-color: #F5F5F5;
+    padding: 16px 0px 16px 48px;
+    border-radius: 8px;
+    border: none;
+}
+
+.top-nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--main-margin) + 20px);
+    font-size: 16px;
+
+    a {
+        color: var(--primary-black);
+        opacity: .3;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    li.active a {
+        opacity: 1;
+    }
+
+}
+
+.header-top-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--main-margin) - 8px);
+}
+
+.header-top-user svg {
+    fill: var(--primary-black);
+}
+
+.header-subnav {
+    padding: 8px 0px;
+    background-color: var(--secondary-charcoal);
+}
+
+.subnav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 88.4px;
+}
+
+.subnav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    color: rgba(255, 255, 255, .5);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -44px;
+        width: 1px;
+        height: 24px;
+        background-color: rgba(255, 255, 255, .2);
+    }
+
+    &:last-child:after {
+        content: none;
+    }
+
+    a {
+        color: rgba(255, 255, 255, .5);
+    }
+}
